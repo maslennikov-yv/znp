@@ -1,0 +1,32 @@
+version: "3.2"
+
+services:
+  mqtt:
+    image: eclipse-mosquitto
+    ports:
+      - 1883:1883
+      - 9001:9001
+    volumes:
+      - nodered:/data
+      - mosquitto:/mosquitto/data
+    restart: unless-stopped
+  nodered:
+    image:  nodered/node-red-docker
+    ports:
+      - 1880:1880
+    volumes:
+      - nodered:/data
+    restart: unless-stopped
+  zigbee2mqtt:
+    image:  koenkk/zigbee2mqtt
+    ports:
+      - 4000:4000
+    devices:
+      - "/dev/ttyACM0:/dev/ttyACM0"
+    volumes:
+      - zigbee2mqtt:/app/data
+    restart: unless-stopped
+volumes:
+  mosquitto:
+  nodered:
+  zigbee2mqtt:
