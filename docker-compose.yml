@@ -7,7 +7,6 @@ services:
       - 1883:1883
       - 9001:9001
     volumes:
-      - nodered:/data
       - mosquitto:/mosquitto/data
     restart: unless-stopped
   nodered:
