@@ -17,7 +17,7 @@ services:
       - nodered:/data
     restart: unless-stopped
   zigbee2mqtt:
-    image:  koenkk/zigbee2mqtt
+    image:  koenkk/zigbee2mqtt:arm32v6
     ports:
       - 4000:4000
     devices:
