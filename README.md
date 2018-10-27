@@ -1,5 +1,4 @@
-# znp
-Zigbee Network Pocessor
+# Dockerized mqtt, nodered and dzigbee2mqtt
 
 docker-compose.yml to start zigbee2mqtt accordantly with eclipse-mosquitto and nodered
 
