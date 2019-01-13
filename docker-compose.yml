@@ -24,6 +24,7 @@ services:
       - "/dev/ttyACM0:/dev/ttyACM0"
     volumes:
       - zigbee2mqtt:/app/data
+      - ./zigbee2mqtt.yaml:/app/configuration.yaml
     restart: unless-stopped
 volumes:
   mosquitto:
